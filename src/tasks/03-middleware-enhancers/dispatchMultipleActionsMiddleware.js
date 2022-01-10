@@ -1,7 +1,8 @@
 const dispatchMultipleActionsMiddleware = storeAPI => next => action => {
 
     if (!Array.isArray(action)) return next(action);
-    return action.map((a) => next(a)).length;
+    const actionCount = action.map((a) => next(a)).length;
+    return actionCount;
 }
 
 export default dispatchMultipleActionsMiddleware;
