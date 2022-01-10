@@ -8,7 +8,8 @@
 // TODO by splitting up the triple-functions structure so you have a place to put the counter.
 
 const countIncrementsSeenMiddleware = storeAPI => next => action => {
-    return next(action);
+
+   return next(action);
 }
 
 export default countIncrementsSeenMiddleware;

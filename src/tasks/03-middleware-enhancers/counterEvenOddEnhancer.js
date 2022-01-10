@@ -11,7 +11,6 @@ export default function counterEvenOddEnhancer(originalCreateStore) {
                 ...store.getState(),
                 counterEvenOdd: "odd"
                 };
-            
         }
         return {...store, getState: newGetState};
     }
