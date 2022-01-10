@@ -12,7 +12,7 @@ const countIncrementsSeenMiddleware = storeAPI => next => action => {
     if (action.type === "INCREMENT"){
         counter++
         next(action);
-        return next({type: "INCREMENTS_SEEN", count: counter });
+        return storeAPI.dispatch({ type: "INCREMENTS_SEEN", count: counter });
        
     } 
     return next(action)
