@@ -7,6 +7,7 @@ const ignoreAddIfOddMiddleware = storeAPI => next => action => {
 
   // Remember that `storeAPI` has the `getState` method available.
     if (action.type === "ADD_5" && storeAPI.getState().counter % 2 === 1) return storeAPI.getState();
+    console.log(storeAPI.getState());
     return next(action);
     
     
