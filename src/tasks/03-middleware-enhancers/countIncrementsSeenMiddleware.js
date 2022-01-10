@@ -9,10 +9,8 @@
 let counter = 0
 const countIncrementsSeenMiddleware = storeAPI => next => action => {
     counter++
-    console.log(counter)
     return next({ type: "INCREMENTS_SEEN", count: counter });
+
 }
-
-
 
 export default countIncrementsSeenMiddleware;
