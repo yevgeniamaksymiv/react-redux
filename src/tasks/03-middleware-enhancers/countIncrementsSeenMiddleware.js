@@ -7,9 +7,8 @@
 // TODO by splitting up the triple-functions structure so you have a place to put the counter.
 const countIncrementsSeenMiddleware = (storeAPI) => {
   return (next) => {
-    let counterIncrementsSeen = storeAPI.getState().incrementsSeen;
-
     return (action) => {
+      let counterIncrementsSeen = storeAPI.getState().incrementsSeen;
       next(action);
       if (action.type === "INCREMENT") {
         counterIncrementsSeen++;
@@ -18,6 +17,7 @@ const countIncrementsSeenMiddleware = (storeAPI) => {
           count: counterIncrementsSeen,
         });
       }
+      console.log(storeAPI.getState());
     };
   };
 };
