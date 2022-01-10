@@ -1,16 +1,16 @@
 import React from 'react';
 import {Route, Link} from 'react-router-dom';
 
-import {Task as UIIntegration} from "./01-ui-integration";
-import {Task as ReactRedux} from "./02-react-redux";
+// import {Task as UIIntegration} from "./01-ui-integration";
+// import {Task as ReactRedux} from "./02-react-redux";
 import {Task as Middleware} from "./03-middleware-enhancers";
-import {Task as SideEffects} from "./04-side-effects";
+// import {Task as SideEffects} from "./04-side-effects";
 
 const tasks = [
-    {title : "UI Integration", component : UIIntegration},
-    {title : "React-Redux", component : ReactRedux},
+    // {title : "UI Integration", component : UIIntegration},
+    // {title : "React-Redux", component : ReactRedux},
     {title : "Middleware", component : Middleware},
-    {title : "Side Effects", component : SideEffects}
+    // {title : "Side Effects", component : SideEffects}
 ].map(e => ({
   ...e,
   slug: e.title
