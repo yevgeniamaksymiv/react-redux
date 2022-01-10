@@ -13,7 +13,6 @@ export default function counterEvenOddEnhancer(originalCreateStore) {
                 };
             
         }
-        console.log({ ...store, getState: newGetState });
         return {...store, getState: newGetState};
     }
 }
