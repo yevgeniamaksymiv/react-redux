@@ -6,10 +6,9 @@ const ignoreAddIfOddMiddleware = storeAPI => next => action => {
   // TODO the action entirely, and prevent it from going onwards.
 
   // Remember that `storeAPI` has the `getState` method available.
-    if (action.type === "ADD_5" && storeAPI.getState().counter % 2 === 0) {
-        console.log(storeAPI.getState().counter);
-        return next(action);
-    } else if (action.type === "INCREMENT") return next(action);
+    if (action.type === "ADD_5" && storeAPI.getState().counter % 2 === 1) return storeAPI.getState();
+    return next(action);
+    
     
 }
 
