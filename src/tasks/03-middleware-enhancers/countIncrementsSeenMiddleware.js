@@ -8,16 +8,15 @@
 // TODO by splitting up the triple-functions structure so you have a place to put the counter.
 let counterIncrementsSeen = 0;
 const countIncrementsSeenMiddleware = storeAPI => next => action => {
-    next(action)
+    
     if (action.type === "INCREMENT"){
         counterIncrementsSeen++;
-        console.log(storeAPI.getState());
-        return storeAPI.dispatch({
+        next({
           type: "INCREMENTS_SEEN",
           count: counterIncrementsSeen,
         });
-       
     } 
+    next(action);
 }
 
 export default countIncrementsSeenMiddleware;
