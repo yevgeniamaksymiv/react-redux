@@ -6,10 +6,11 @@
 
 // TODO This means you'll need to keep a variable alive in the middleware between dispatches, so start
 // TODO by splitting up the triple-functions structure so you have a place to put the counter.
-
+let counter = 0
 const countIncrementsSeenMiddleware = storeAPI => next => action => {
+    counter++
+    return next({ type: "INCREMENTS_SEEN", count: counter });
 
-   return next(action);
 }
 
 export default countIncrementsSeenMiddleware;
